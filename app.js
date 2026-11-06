@@ -30,7 +30,7 @@ el('send').onclick=async()=>{
 el('verify').onclick=async()=>{
  try{
   const email=el('email').value.trim(),code=el('otp').value.trim();
-  if(!/^\d{6,10}$/.test(code))throw Error('Введите одноразовый код');
+  if(!/^\d{6,10}$/.test(code)&&!code.startsWith('https://'))throw Error('Введите код или исходную ссылку из письма');
   const r=await call('/session',{method:'POST',auth:null,body:{email,code}});
   state.session=(await r.json()).session;
   el('otp').value='';el('login').hidden=true;el('workspace').hidden=false;
