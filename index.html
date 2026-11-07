@@ -1,11 +1,30 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src http://127.0.0.1:18758; media-src blob:; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"><title>MNEMOSYNE / Редакционный поиск</title><link rel="stylesheet" href="style.css"></head>
-<body><header class="masthead"><div class="eyebrow">MNEMOSYNE / CORE</div><h1>Редакционный поиск</h1><p class="subtitle">Поиск по театральному архиву · видео остаётся на этом компьютере</p></header>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<title>MNEMOSYNE / Transcript Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="eyebrow">MNEMOSYNE / TRANSCRIPT STUDIO</div>
+  <h1>Редакционный поиск</h1>
+  <p class="subtitle">Защищённый доступ к личному театральному архиву</p>
+</header>
 <main>
-<section class="panel" id="connect-panel"><h2>Локальный архив</h2><p class="help">Для доступа Chrome может запросить разрешение на подключение к этому компьютеру.</p><button id="connect" type="button">Подключить локальный сервер</button><p class="connection-state" id="connection">Не подключён</p></section>
-<section class="panel" id="login" hidden><h2>Вход Owner</h2><div class="auth-field"><label for="email">Email</label><div class="auth-controls"><input id="email" type="email" autocomplete="email"><button id="send" type="button">Получить код</button></div></div><div class="auth-field"><label for="otp">Код или исходная ссылка из письма</label><div class="auth-controls"><input id="otp" autocomplete="one-time-code"><button id="verify" type="button">Войти</button></div></div></section>
-<section class="panel workspace" id="workspace" hidden><div class="workspace-header"><h2>Поиск</h2><button id="logout" class="text-button" type="button">Выйти</button></div>
-<form id="search-form" class="search-form"><label for="term">Фраза</label><div class="search-controls"><input id="term" value="Зубов" type="search" minlength="2" maxlength="100" required><button id="search" type="submit">Найти и открыть видео</button></div></form>
-<div id="loader" class="loader" role="status" aria-live="polite" hidden><span class="spinner" aria-hidden="true"></span><span id="loader-label">Поиск и подготовка видео…</span></div>
-<div id="results" aria-live="polite"></div><video id="player" controls playsinline preload="metadata" hidden></video></section><p id="status" role="status" aria-live="polite"></p>
-</main><script src="app.js"></script></body></html>
+  <section class="panel">
+    <h2>Удалённый Transcript Studio</h2>
+    <p>Откройте защищённый Studio на отдельном HTTPS-адресе. Для входа используется passkey и предварительное локальное подтверждение владельца.</p>
+    <p><a href="https://mnemosyne-bl056-studio.shares.zrok.io/remote/" rel="noreferrer noopener">Открыть защищённый Studio</a></p>
+    <p><small>Доверенный адрес: <code>mnemosyne-bl056-studio.shares.zrok.io</code>. Если домашний компьютер или временный защищённый сеанс недоступен, Studio не откроется.</small></p>
+  </section>
+  <section class="panel">
+    <h2>Безопасность</h2>
+    <p>Эта публичная страница не принимает email, OTP, magic link, passkey или видео. Локальная авторизация выполняется только в Companion на вашем компьютере. Проверяйте адрес перед подтверждением входа.</p>
+  </section>
+</main>
+</body>
+</html>
